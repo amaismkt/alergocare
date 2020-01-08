@@ -1,8 +1,7 @@
 $("#login").submit(() => {
     event.preventDefault()
     let dados = $("#login").serialize()
-    alert(dados)
-    $.post("localhost:8000/login", dados, response => {
+    $.post("http://127.0.0.1:8000/login/", dados, response => {
         console.log(response)
     })
 })
