@@ -17,11 +17,30 @@ class AuthController extends Controller
         $credentials["password"] = $password["password"];
 
         if (Auth::attempt($credentials)) {
-            $user = User::find(["email" => "lucasdelimamonteiro@gmail.com"]);
-            var_dump($user->toArray());
+            session_start();
+            $_SESSION["loggedIn"] = 1;
+            $_SESSION["email"] = $email["email"];
+            return "OK";
         }
         else {
-            return "NO SUCH USER OR PASSWORD!";
+            return "NO SUCH USER OR PASSWORD.";
+        }
+    }
+
+    public function logout()
+    {
+        $_SESSION = [];
+        session_destroy();
+    }
+
+    public function check()
+    {
+        session_start();
+        if($_SESSION["loggedIn"]==1){
+            return 1;
+        }
+        else{
+            return 0;
         }
     }
 }
