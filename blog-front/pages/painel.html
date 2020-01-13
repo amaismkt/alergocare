@@ -13,6 +13,7 @@
 	<link rel="stylesheet" href="../css/font-icons.css" type="text/css" />
 	<link rel="stylesheet" href="../css/animate.css" type="text/css" />
 	<link rel="stylesheet" href="../css/magnific-popup.css" type="text/css" />
+	<link rel="stylesheet" href="../include/jqte/jquery-te-1.4.0.css" type="text/css" />
 
 	<link rel="stylesheet" href="../css/responsive.css" type="text/css" />
 	<meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -64,7 +65,7 @@
 		</div>
 
 		
-		<header id="header">
+		<!-- <header id="header">
 
 			<div id="header-wrap">
 
@@ -94,17 +95,17 @@
 
 			</div>
 
-		</header>
+		</header> -->
 
 		
 		<section id="page-title" class="nobg">
 
 			<div class="container clearfix">
-				<h1>Blog</h1>
+				<h1>Painel</h1>
 				
 				<ol class="breadcrumb">
 					<li class="breadcrumb-item"><a href="../index.html">Home</a></li>
-					<li class="breadcrumb-item active" aria-current="page">Blog</li>
+					<li class="breadcrumb-item active" aria-current="page">Painel</li>
 				</ol>
 			</div>
 
@@ -118,14 +119,43 @@
 
 				<div class="container clearfix">
 
-					
-					<div id="posts" class="post-grid grid-container grid-2 clearfix" data-layout="fitRows">
-						
-							<h2>PAINEL</h2>
-							
-					</div>
+					<div class="row">
+						<div class="col-md-6 offset-md-3">
+							<h1 style="text-align:center;">Publicar post</h1>
 
-					
+							<form id="post">
+								<div class="row">
+									<div class="col-md-12">
+										<input type="text" class="form-control" name="title" placeholder="Título" style="margin-bottom:16px">
+									</div>
+								</div>
+								<div class="row">
+									<div class="col-md-12">
+										<textarea name="text" id="text"></textarea>
+									</div>
+								</div>
+								<div class="row">
+									<div class="col-md-12">
+										<select name="category" id="category" class="form-control">
+											<option>Categoria</option>
+										</select>
+									</div>
+								</div>
+								<div class="row" style="margin-top:16px">
+									<div class="col-md-12">
+										<label for="image">Imagem:</label>
+										<input type="file" name="image" id="image">
+									</div>
+								</div>
+								<div class="row">
+									<div class="col-md-12">
+										<button type="submit" class="btn btn-primary" style="margin-top: 16px">Publicar</button>
+									</div>
+								</div>
+							</form>
+
+						</div>
+					</div>
 
 				</div>
 
@@ -253,6 +283,11 @@
 	<!-- Footer Scripts
 	============================================0= -->
 	<script src="../js/functions.js"></script>
+	<script src="../include/jqte/jquery-te-1.4.0.min.js"></script>
+
+	<script>
+		$("#text").jqte()
+	</script>
 
 </body>
 </html>

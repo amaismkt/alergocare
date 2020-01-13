@@ -16,6 +16,17 @@ class BlogController extends Controller
         return "TESTANDO API";
     }
 
+    public function store(Request $request)
+    {
+        try{
+            Blog::create($request->input());
+        }
+        catch (Exception $e){
+            echo "Não foi possível cadastrar o post: " . $e->getMessage();
+        }
+        
+    }
+
     /**
      * Store a newly created resource in storage.
      *
