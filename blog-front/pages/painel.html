@@ -126,18 +126,21 @@
 							<form id="post">
 								<div class="row">
 									<div class="col-md-12">
-										<input type="text" class="form-control" name="title" placeholder="Título" style="margin-bottom:16px">
+										<input type="text" class="form-control" name="title" placeholder="Título" style="margin-bottom:16px" required>
 									</div>
 								</div>
 								<div class="row">
 									<div class="col-md-12">
-										<textarea name="text" id="text"></textarea>
+										<textarea name="text" id="text" required></textarea>
 									</div>
 								</div>
 								<div class="row">
 									<div class="col-md-12">
-										<select name="category" id="category" class="form-control">
-											<option>Categoria</option>
+										<select name="category_id" id="category_id" class="form-control">
+											<option value="0">Categoria</option>
+											<option value="1">Procedimento</option>
+											<option value="2">Curiosidade</option>
+											<option value="3">Notícias</option>
 										</select>
 									</div>
 								</div>
@@ -145,6 +148,20 @@
 									<div class="col-md-12">
 										<label for="image">Imagem:</label>
 										<input type="file" name="image" id="image">
+									</div>
+								</div>
+								<div id="sucesso" class="row" style="margin: 16px 0 16px 0; display: none;">
+									<div class="col-md-12">
+										<div class="alert alert-success">
+											<p style="text-align:center; margin:0;"><i class="fa fa-check"></i> Post publicado com sucesso!</p>
+										</div>
+									</div>
+								</div>
+								<div id="erro" class="row" style="margin: 16px 0 16px 0; display: none;">
+									<div class="col-md-12">
+										<div class="alert alert-danger">
+											<p style="text-align:center; margin:0;"><i class="fa fa-times"></i> Ocorreu um erro. <br>Tente novamente mais tarde.</p>
+										</div>
 									</div>
 								</div>
 								<div class="row">

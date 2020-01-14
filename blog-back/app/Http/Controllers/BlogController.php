@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Blog;
 
 class BlogController extends Controller
 {
@@ -13,9 +14,25 @@ class BlogController extends Controller
      */
     public function index()
     {
-        return "TESTANDO API";
+        $posts = Blog::all();
+        return $posts;
     }
 
+    public function fileUpload(Request $request)
+    {
+        $file = $request->file('file');
+        $path = "../../blog-front/images/blog";
+        $name = $file->getClientOriginalName();
+        $file->move($path, $name);
+        return 'success';
+    }
+
+    /**
+     * Store a newly created resource in storage.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @return \Illuminate\Http\Response
+     */
     public function store(Request $request)
     {
         try{
@@ -28,17 +45,6 @@ class BlogController extends Controller
     }
 
     /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
-    public function store(Request $request)
-    {
-        //
-    }
-
-    /**
      * Display the specified resource.
      *
      * @param  int  $id
@@ -46,7 +52,9 @@ class BlogController extends Controller
      */
     public function show($id)
     {
-        //
+        $post = Blog::find($id);
+
+        return $post;
     }
 
     /**

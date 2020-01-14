@@ -9,6 +9,6 @@ class Blog extends Model
     protected $table = "posts";
 
     protected $fillable = [
-        'title', 'text', 'category', 'author', 'image'
+        'title', 'text', 'category_id', 'author', 'image'
     ];
 }
