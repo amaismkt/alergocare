@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Blog;
+use App\Category;
 
 class BlogController extends Controller
 {
@@ -15,6 +16,15 @@ class BlogController extends Controller
     public function index()
     {
         $posts = Blog::all();
+        $categories = Category::all();
+
+        foreach($posts as $post){
+            foreach($categories as $category){
+                if($post->category_id == $category->id){
+                    $post->category = $category->name;
+                }
+            }
+        }
         return $posts;
     }
 
@@ -39,7 +49,7 @@ class BlogController extends Controller
             Blog::create($request->input());
         }
         catch (Exception $e){
-            echo "Não foi possível cadastrar o post: " . $e->getMessage();
+            echo "NÃ£o foi possÃ­vel cadastrar o post: " . $e->getMessage();
         }
         
     }
@@ -53,6 +63,13 @@ class BlogController extends Controller
     public function show($id)
     {
         $post = Blog::find($id);
+        $categories = Category::all();
+
+        foreach($categories as $category){
+            if($post->category_id == $category->id){
+                $post->category = $category->name;
+            }
+        }
 
         return $post;
     }

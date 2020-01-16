@@ -1,10 +1,10 @@
 $(document).ready(() => {
     $.get("http://127.0.0.1:8000/posts/", response => {
-        popularPosts(response)
+        populatePosts(response)
     })
 })
 
-function popularPosts(posts)
+function populatePosts(posts)
 {
     console.log(posts)
     posts.forEach((post) => {
@@ -19,7 +19,7 @@ function popularPosts(posts)
                 <hr>
                 <p style="text-align:center;">${post.text.substring(0, 200)}...</p>
                 <p>
-                    Categoria: ${post.category_id}<br>
+                    Categoria: ${post.category}<br>
                     Publicado em: ${post.created_at}
                 </p>
                 <div style="text-align:center; margin-bottom: 20px;">

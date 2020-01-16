@@ -2,8 +2,25 @@
 
 var imgName = "no-image"
 
+$(document).ready(() => {
+    $.get("http://127.0.0.1:8000/categories/", response => {
+        populateCategories(response)
+    })
+})
+
 $("#image").change(() => {
     imgName = $("#image").val().split("\\").pop()
+})
+
+$("#category").submit(() => {
+    event.preventDefault()
+    let data = $("#category").serialize()
+
+    $.post("http://127.0.0.1:8000/store-category", data, response => {
+        console.log(response)
+    })
+    .fail(() => alert("Ocorreu um erro, tente novamente mais tarde."))
+    .done(() => location.reload())
 })
 
 $("#post").submit(() => {
@@ -49,6 +66,28 @@ function uploadImg()
             }
         },
     })
+}
+
+function populateCategories(categories)
+{
+    console.log(categories)
+    categories.forEach((category) => {
+        $("#category_id").append(`
+            <option value="${category.id}">${category.name}</option>
+        `)
+        $("#categories").append(`
+            <li>${category.name} <a href="#" onclick="deleteCategory(${category.id});"><i class="fa fa-trash"></i></a></li>
+        `)
+    })
+}
+
+function deleteCategory(id)
+{
+    $.post("http://localhost:8000/delete-category", id, response => {
+        console.log(response)
+    })
+    .done(() => location.reload())
+    .fail(() => alert("Ocorreu um erro. Tente novamente mais tarde."))
 }
 
 // END PUBLISH POST

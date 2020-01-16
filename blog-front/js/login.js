@@ -1,4 +1,4 @@
-if(location.pathname.substr(1) != "blog/blog-front/pages/login.html"){
+if(location.pathname.substr(1) != "blog/blog-front/pages/login.html" && location.pathname.substr(1) != "alergocare/blog-front/pages/login.html"){
     $.ajax({
         url: 'http://127.0.0.1:8000/api/auth/user/',
         type: 'GET',
@@ -16,6 +16,7 @@ if(location.pathname.substr(1) != "blog/blog-front/pages/login.html"){
 
 $("#login").submit(() => {
     event.preventDefault()
+    $("#botao-login").prop("disabled", true)
     let dados = $("#login").serialize()
     $.post("http://127.0.0.1:8000/api/auth/login/", dados)
     .done(response => {
@@ -23,6 +24,7 @@ $("#login").submit(() => {
         window.location.href = "painel.html"
     })
     .fail(() => alert("Email ou senha incorretos."))
+    .always(() =>  $("#botao-login").prop("disabled", false))
 })
 
 $("#logout").click(() => {

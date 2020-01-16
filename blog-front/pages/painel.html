@@ -14,6 +14,7 @@
 	<link rel="stylesheet" href="../css/animate.css" type="text/css" />
 	<link rel="stylesheet" href="../css/magnific-popup.css" type="text/css" />
 	<link rel="stylesheet" href="../include/jqte/jquery-te-1.4.0.css" type="text/css" />
+	<link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
 
 	<link rel="stylesheet" href="../css/responsive.css" type="text/css" />
 	<meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -120,7 +121,8 @@
 				<div class="container clearfix">
 
 					<div class="row">
-						<div class="col-md-6 offset-md-3">
+						<div class="col-md-6 offset-md-1">
+
 							<h1 style="text-align:center;">Publicar post</h1>
 
 							<form id="post">
@@ -137,10 +139,6 @@
 								<div class="row">
 									<div class="col-md-12">
 										<select name="category_id" id="category_id" class="form-control">
-											<option value="0">Categoria</option>
-											<option value="1">Procedimento</option>
-											<option value="2">Curiosidade</option>
-											<option value="3">Notícias</option>
 										</select>
 									</div>
 								</div>
@@ -171,6 +169,20 @@
 								</div>
 							</form>
 
+						</div>
+						<div class="col-md-4 offset-md-1">
+							<h4>Categorias:</h4>
+							<ul id="categories"></ul>
+							<form id="category">
+								<div class="row">
+									<div class="col-md-10">
+										<input type="text" class="form-control" name="name">
+									</div>
+									<div class="col-md-2">
+										<button type="submit" class="btn btn-primary">Cadastrar</button>
+									</div>
+								</div>
+							</form>
 						</div>
 					</div>
 
