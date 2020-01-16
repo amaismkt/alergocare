@@ -81,9 +81,18 @@ class BlogController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request)
     {
-        //
+        $post = Blog::find($request->id);
+        $post->update($request->all());
+        $post->save();
+        return "success";
+    }
+
+    public function edit($id)
+    {
+        $post = Blog::find($id);
+        return $post;
     }
 
     /**
@@ -94,6 +103,9 @@ class BlogController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $blog = Blog::find($id);
+        $blog->delete();
+
+        return "success";
     }
 }

@@ -118,14 +118,15 @@
 				<div class="container clearfix">
 
 					<div class="row">
-						<div class="col-md-6 offset-md-1">
+						<div class="col-md-6 offset-md-3">
 
-							<h1 style="text-align:center;">Publicar post</h1>
+							<h1 style="text-align:center;">Editar post</h1>
 
 							<form id="post">
+                                <input type="hidden" name="id" id="id">
 								<div class="row">
 									<div class="col-md-12">
-										<input type="text" class="form-control" name="title" placeholder="Título" style="margin-bottom:16px" required>
+										<input type="text" id="title" class="form-control" name="title" placeholder="Título" style="margin-bottom:16px" required>
 									</div>
 								</div>
 								<div class="row">
@@ -148,7 +149,7 @@
 								<div id="sucesso" class="row" style="margin: 16px 0 16px 0; display: none;">
 									<div class="col-md-12">
 										<div class="alert alert-success">
-											<p style="text-align:center; margin:0;"><i class="fa fa-check"></i> Post publicado com sucesso!</p>
+											<p style="text-align:center; margin:0;"><i class="fa fa-check"></i> Post atualizado com sucesso!</p>
 										</div>
 									</div>
 								</div>
@@ -161,25 +162,11 @@
 								</div>
 								<div class="row">
 									<div class="col-md-12">
-										<button type="submit" class="btn btn-primary" style="margin-top: 16px">Publicar</button>
+										<button type="submit" class="btn btn-primary" style="margin-top: 16px">Atualizar</button>
 									</div>
 								</div>
 							</form>
 
-						</div>
-						<div class="col-md-4 offset-md-1">
-							<h4>Categorias:</h4>
-							<ul id="categories"></ul>
-							<form id="category">
-								<div class="row">
-									<div class="col-md-10">
-										<input type="text" class="form-control" name="name">
-									</div>
-									<div class="col-md-2">
-										<button type="submit" class="btn btn-primary">Cadastrar</button>
-									</div>
-								</div>
-							</form>
 						</div>
 					</div>
 
@@ -303,7 +290,7 @@
 	============================================= -->
 	<script src="../js/jquery.js"></script>
 	<script src="../js/plugins.js"></script>
-	<script src="../js/painel.js"></script>
+	<script src="../js/editar-post.js"></script>
 	<script src="../js/login.js"></script>
 
 	<!-- Footer Scripts

@@ -13,7 +13,8 @@
 	<link rel="stylesheet" href="../css/font-icons.css" type="text/css" />
 	<link rel="stylesheet" href="../css/animate.css" type="text/css" />
 	<link rel="stylesheet" href="../css/magnific-popup.css" type="text/css" />
-	<link rel="stylesheet" href="../include/jqte/jquery-te-1.4.0.css" type="text/css" />
+    <link rel="stylesheet" href="../include/jqte/jquery-te-1.4.0.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/dt/dt-1.10.20/datatables.min.css"/>
 	<link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
 
 	<link rel="stylesheet" href="../css/responsive.css" type="text/css" />
@@ -21,8 +22,15 @@
   
     <link rel="icon" type="image/png" href="../images/icone.png">
 
-	
-	<title>AlergoCare</title>
+    <title>AlergoCare</title>
+    <style>
+        .box{
+			padding:2%;
+			-webkit-box-shadow: 0px 0px 7px 2px rgba(179,179,179,1);
+			-moz-box-shadow: 0px 0px 7px 2px rgba(179,179,179,1);
+			box-shadow: 0px 0px 7px 2px rgba(179,179,179,1);
+		}
+    </style>
 
 </head>
 
@@ -84,8 +92,8 @@
 					<nav id="primary-menu" class="style-3">
 
 						<ul>
-							<li class="current"><a href="#"><div>Publicar</div></a></li>
-							<li ><a href="posts.html"><div>Gerenciar</div></a></li>
+							<li ><a href="painel.html"><div>Publicar</div></a></li>
+							<li class="current"><a href="#"><div>Gerenciar</div></a></li>
 						</ul>
 
 					</nav>
@@ -118,68 +126,27 @@
 				<div class="container clearfix">
 
 					<div class="row">
-						<div class="col-md-6 offset-md-1">
+						<div class="col-md-10 offset-md-1">
 
-							<h1 style="text-align:center;">Publicar post</h1>
+                            <div class="box">
+                                <h1 style="text-align:center;">Gerenciar post</h1>
 
-							<form id="post">
-								<div class="row">
-									<div class="col-md-12">
-										<input type="text" class="form-control" name="title" placeholder="Título" style="margin-bottom:16px" required>
-									</div>
-								</div>
-								<div class="row">
-									<div class="col-md-12">
-										<textarea name="text" id="text" required></textarea>
-									</div>
-								</div>
-								<div class="row">
-									<div class="col-md-12">
-										<select name="category_id" id="category_id" class="form-control">
-										</select>
-									</div>
-								</div>
-								<div class="row" style="margin-top:16px">
-									<div class="col-md-12">
-										<label for="image">Imagem:</label>
-										<input type="file" name="image" id="image">
-									</div>
-								</div>
-								<div id="sucesso" class="row" style="margin: 16px 0 16px 0; display: none;">
-									<div class="col-md-12">
-										<div class="alert alert-success">
-											<p style="text-align:center; margin:0;"><i class="fa fa-check"></i> Post publicado com sucesso!</p>
-										</div>
-									</div>
-								</div>
-								<div id="erro" class="row" style="margin: 16px 0 16px 0; display: none;">
-									<div class="col-md-12">
-										<div class="alert alert-danger">
-											<p style="text-align:center; margin:0;"><i class="fa fa-times"></i> Ocorreu um erro. <br>Tente novamente mais tarde.</p>
-										</div>
-									</div>
-								</div>
-								<div class="row">
-									<div class="col-md-12">
-										<button type="submit" class="btn btn-primary" style="margin-top: 16px">Publicar</button>
-									</div>
-								</div>
-							</form>
+                                <table id="posts" class="table">
+                                    <thead>
+                                        <tr>
+                                            <th>Título</th>
+                                            <th>Categoria</th>
+                                            <th>Data</th>
+                                            <th>Conteúdo</th>
+                                            <th>Excluir</th>
+                                            <th>Editar</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody id="posts-tbody">
+                                    </tbody>
+                                </table>
+                            </div>
 
-						</div>
-						<div class="col-md-4 offset-md-1">
-							<h4>Categorias:</h4>
-							<ul id="categories"></ul>
-							<form id="category">
-								<div class="row">
-									<div class="col-md-10">
-										<input type="text" class="form-control" name="name">
-									</div>
-									<div class="col-md-2">
-										<button type="submit" class="btn btn-primary">Cadastrar</button>
-									</div>
-								</div>
-							</form>
 						</div>
 					</div>
 
@@ -303,13 +270,15 @@
 	============================================= -->
 	<script src="../js/jquery.js"></script>
 	<script src="../js/plugins.js"></script>
-	<script src="../js/painel.js"></script>
+	
 	<script src="../js/login.js"></script>
 
 	<!-- Footer Scripts
 	============================================0= -->
 	<script src="../js/functions.js"></script>
 	<script src="../include/jqte/jquery-te-1.4.0.min.js"></script>
+    <script type="text/javascript" src="https://cdn.datatables.net/v/dt/dt-1.10.20/datatables.min.js"></script>
+    <script src="../js/posts.js"></script>
 
 	<script>
 		$("#text").jqte()

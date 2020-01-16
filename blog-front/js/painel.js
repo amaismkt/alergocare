@@ -83,11 +83,11 @@ function populateCategories(categories)
 
 function deleteCategory(id)
 {
-    $.post("http://localhost:8000/delete-category", id, response => {
-        console.log(response)
+    $.get(`http://localhost:8000/delete-category/${id}`)
+    .done(() => {
+        location.reload()
     })
-    .done(() => location.reload())
-    .fail(() => alert("Ocorreu um erro. Tente novamente mais tarde."))
+    .fail("Ocorreu um erro, tente novamente mais tarde.")
 }
 
 // END PUBLISH POST

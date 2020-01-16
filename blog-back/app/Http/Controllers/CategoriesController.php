@@ -22,7 +22,6 @@ class CategoriesController extends Controller
 
     public function destroy($id)
     {
-        return $id;
         $category = Category::find($id);
         $category->delete();
 
