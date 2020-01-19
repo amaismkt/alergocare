@@ -83,11 +83,11 @@ function populateCategories(categories)
 
 function deleteCategory(id)
 {
-    $.get(`http://localhost:8000/delete-category/${id}`)
-    .done(() => {
-        location.reload()
+    $.post("http://alergocare.com/blog-back/public/index.php/delete-category", id, response => {
+        console.log(response)
     })
-    .fail("Ocorreu um erro, tente novamente mais tarde.")
+    .done(() => location.reload())
+    .fail(() => alert("Ocorreu um erro. Tente novamente mais tarde."))
 }
 
 // END PUBLISH POST
