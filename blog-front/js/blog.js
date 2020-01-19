@@ -6,7 +6,6 @@ $(document).ready(() => {
 
 function populatePosts(posts)
 {
-    console.log(posts)
     posts.forEach((post) => {
         $("#post-row").append(`
         <div class="col-md-4">
