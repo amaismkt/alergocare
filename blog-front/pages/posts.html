@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en-US">
+<head>
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-82254371-1"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+
+gtag('config', 'UA-82254371-1');
+</script>
+	<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+	<meta name="author" content="" />
+
+	
+	<link href="https://fonts.googleapis.com/css?family=Lato:300,400,400i,700|Raleway:300,400,500,600,700|Crete+Round:400i" rel="stylesheet" type="text/css" />
+	<link rel="stylesheet" href="../css/bootstrap.css" type="text/css" />
+	<link rel="stylesheet" href="../style.css" type="text/css" />
+	<link rel="stylesheet" href="../css/dark.css" type="text/css" />
+	<link rel="stylesheet" href="../css/font-icons.css" type="text/css" />
+	<link rel="stylesheet" href="../css/animate.css" type="text/css" />
+	<link rel="stylesheet" href="../css/magnific-popup.css" type="text/css" />
+    	<link rel="stylesheet" href="../include/jqte/jquery-te-1.4.0.css" type="text/css" />
+    	<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/dt/dt-1.10.20/datatables.min.css"/>
+	<link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+	<link rel="stylesheet" href="../css/responsive.css" type="text/css" />
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+  
+    	<link rel="icon" type="image/png" href="../images/icone.png">
+
+    <title>AlergoCare</title>
+    <style>
+        .box{
+			padding:2%;
+			-webkit-box-shadow: 0px 0px 7px 2px rgba(179,179,179,1);
+			-moz-box-shadow: 0px 0px 7px 2px rgba(179,179,179,1);
+			box-shadow: 0px 0px 7px 2px rgba(179,179,179,1);
+		}
+    </style>
+
+</head>
+
+<body class="stretched">
+
+	
+	<div id="wrapper" class="clearfix">
+
+		
+		<div id="top-bar">
+
+			<div class="container clearfix">
+
+				<div class="col_half d-none d-md-block nobottommargin">
+
+					
+					<div class="top-links">
+						<ul>
+							
+							<li><a href="#" class="nott"><i class="icon-envelope2"></i> contato@alergocare.com</a></li>
+						</ul>
+					</div>
+
+				</div>
+
+				<div class="col_half col_last fright nobottommargin">
+
+					
+					<div class="top-links">
+						<ul>
+							
+                            <li><a href="http://api.whatsapp.com/send?1=pt_BR&phone=5562996423518" target="_blank" data-scrollto="#booking-appointment-form" data-offset="100" data-easing="easeInOutExpo" data-speed="1200" class="bgcolor" style="color:#fff;">WhatsApp</a></li>
+                            <li><a href="#" id="logout">Logout</a></li>
+						</ul>
+					</div>
+
+				</div>
+
+			</div>
+
+		</div>
+
+		
+		<header id="header">
+
+			<div id="header-wrap">
+
+				<div class="container clearfix">
+
+					<div id="primary-menu-trigger"><i class="icon-reorder"></i></div>
+
+					
+					<div id="logo">
+						<a href="../index.html" class="standard-logo"><img src="../images/logo-alergocare.png" alt="AlergoCare"></a>
+						<a href="../index.html" class="retina-logo"><img src="../images/logo-alergocare.png" alt="AlergoCare"></a>
+					</div>
+
+					
+					<nav id="primary-menu" class="style-3">
+
+						<ul>
+							<li ><a href="painel.html"><div>Publicar</div></a></li>
+							<li class="current"><a href="#"><div>Gerenciar</div></a></li>
+						</ul>
+
+					</nav>
+				</div>
+
+			</div>
+
+		</header>
+
+		
+		<section id="page-title" class="nobg">
+
+			<div class="container clearfix">
+				<h1>Painel</h1>
+				
+				<ol class="breadcrumb">
+					<li class="breadcrumb-item"><a href="../index.html">Home</a></li>
+					<li class="breadcrumb-item active" aria-current="page">Painel</li>
+				</ol>
+			</div>
+
+		</section>
+
+
+		
+		<section id="content">
+
+			<div class="content-wrap">
+
+				<div class="container clearfix">
+
+					<div class="row">
+						<div class="col-md-10 offset-md-1">
+
+                            <div class="box">
+                                <h1 style="text-align:center;">Gerenciar post</h1>
+
+                                <table id="posts" class="table">
+                                    <thead>
+                                        <tr>
+                                            <th>Título</th>
+                                            <th>Categoria</th>
+                                            <th>Data</th>
+                                            <th>Conteúdo</th>
+                                            <th>Excluir</th>
+                                            <th>Editar</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody id="posts-tbody">
+                                    </tbody>
+                                </table>
+                            </div>
+
+						</div>
+					</div>
+
+				</div>
+
+			</div>
+
+		</section>
+
+		
+		<footer id="footer" style="background-color: #F5F5F5;border-top: 2px solid rgba(0,0,0,0.06);">
+
+			<div class="container" style="border-bottom: 1px solid rgba(0,0,0,0.06);">
+
+				
+				<div class="footer-widgets-wrap clearfix">
+
+					<div class="col_half">
+
+						<div class="widget clearfix">
+
+							<img src="../images/logo-alergocare.png" alt="" class="footer-logo">
+
+							<p>Atender com excelência, carinho e respeito o paciente e seus familiares, levando em consideração a integralidade do indivíduo.</p>
+
+							<div class="clearfix" style="padding: 10px 0; background:  no-repeat center center;">
+								<div class="col_half">
+									<address class="nobottommargin">
+										<title="Headquarters" style="display: inline-block;margin-bottom: 7px;"><strong>Endereço:</strong><br>
+										 Edifício New Times Square sala 1312,<br> Av. T-10, 09/02 Quadra 102, Lote <br> St. Bueno, Goiânia - GO, 74223-060
+										
+									</address>
+								</div>
+								<div class="col_half col_last" style="top:22px;">
+									<title="Phone Number"><strong>Telefone:</strong> (62) 3624-5757<br>
+									<title="Fax"><strong>Celular:</strong> (62) 99642-3518<br>
+									<title="Email Address"><strong>Email:</strong>contato@alergocare.com
+								</div>
+							</div>
+
+							<a href="https://www.facebook.com/alergocare" target="_blank" class="social-icon si-small si-rounded topmargin-sm si-facebook">
+								<i class="icon-facebook"></i>
+								<i class="icon-facebook"></i>
+							</a>
+
+							
+
+							<a href="https://www.instagram.com/alergocaregoiania" target="_blank" class="social-icon si-small si-rounded topmargin-sm si-instagram">
+								<i class="icon-instagram"></i>
+								<i class="icon-instagram"></i>
+							</a>
+
+							
+
+						</div>
+
+					</div>
+
+
+					<div class="col_one_fourth col_last">
+
+						<div class="widget quick-contact-widget form-widget clearfix">
+
+							<h4>Envie uma mensagem</h4>
+
+							<div class="form-result"></div>
+
+							<form id="quick-contact-form" name="quick-contact-form" action="include/form.php" method="post" class="quick-contact-form nobottommargin">
+
+								<div class="form-process"></div>
+
+								<div class="input-group divcenter">
+									<div class="input-group-prepend">
+										<div class="input-group-text"><i class="icon-user"></i></div>
+									</div>
+									<input type="text" class="required form-control" id="fname" name="fname" value="" placeholder="Nome" />
+								</div>
+								<div class="input-group divcenter">
+									<div class="input-group-prepend">
+										<div class="input-group-text"><i class="icon-email2"></i></div>
+									</div>
+									<input type="text" class="required form-control email" id="email" name="email" value="" placeholder="Email " />
+								</div>
+								<textarea class="required form-control input-block-level short-textarea" name="message" id="message" rows="4" cols="30" placeholder="Mensagem"></textarea>
+								<input type="text" class="hidden" id="quick-contact-form-botcheck" name="quick-contact-form-botcheck" value="" />
+								<input type="hidden" name="prefix" value="quick-contact-form-">
+								<button type="submit" id="quick-contact-form-submit" name="quick-contact-form-submit" class="btn btn-danger nomargin" value="submit">Enviar</button>
+
+							</form>
+
+						</div>
+
+					</div>
+
+				</div>
+
+			</div>
+
+			
+			<div id="copyrights">
+
+				<div class="container clearfix">
+
+					<div class="col_full nobottommargin center">
+						
+						&copy; 2020 AlergoCare | Todos os direitos reservados.
+					</div>
+
+				</div>
+
+			</div>
+
+		</footer>
+
+	</div>
+
+	
+	<div id="gotoTop" class="icon-angle-up"></div>
+
+	<!-- JavaScripts
+	============================================= -->
+	<script src="../js/jquery.js"></script>
+	<script src="../js/plugins.js"></script>
+	
+	<script src="../js/login.js"></script>
+
+	<!-- Footer Scripts
+	============================================0= -->
+	<script src="../js/functions.js"></script>
+	<script src="../include/jqte/jquery-te-1.4.0.min.js"></script>
+    	<script type="text/javascript" src="https://cdn.datatables.net/v/dt/dt-1.10.20/datatables.min.js"></script>
+    	<script src="../js/posts.js"></script>
+
+	<script>
+		$("#text").jqte()
+	</script>
+
+</body>
+</html>
