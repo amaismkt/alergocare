@@ -3,7 +3,7 @@
 var imgName = "no-image"
 
 $(document).ready(() => {
-    $.get("http://127.0.0.1:8000/categories/", response => {
+    $.get("http://alergocare.com/blog-back/public/index.php/categories/", response => {
         populateCategories(response)
     })
 })
@@ -16,7 +16,7 @@ $("#category").submit(() => {
     event.preventDefault()
     let data = $("#category").serialize()
 
-    $.post("http://127.0.0.1:8000/store-category", data, response => {
+    $.post("http://alergocare.com/blog-back/public/index.php/store-category", data, response => {
         console.log(response)
     })
     .fail(() => alert("Ocorreu um erro, tente novamente mais tarde."))
@@ -28,7 +28,7 @@ $("#post").submit(() => {
     let data = $("#post").serialize()
     data = data + "&image=" + imgName
 
-    $.post("http://localhost:8000/publish-post", data)
+    $.post("http://alergocare.com/blog-back/public/index.php/publish-post", data)
     .done(() => {
         uploadImg()
         $("#sucesso").show(500)
@@ -55,7 +55,7 @@ function uploadImg()
     fd.append('file',files)
 
     $.ajax({
-        url: 'http://localhost:8000/file-upload',
+        url: 'http://alergocare.com/blog-back/public/index.php/file-upload',
         type: 'post',
         data: fd,
         contentType: false,
@@ -83,7 +83,7 @@ function populateCategories(categories)
 
 function deleteCategory(id)
 {
-    $.post("http://alergocare.com/blog-back/public/index.php/delete-category", id, response => {
+    $.post(`http://alergocare.com/blog-back/public/index.php/delete-category/${id}`, id, response => {
         console.log(response)
     })
     .done(() => location.reload())

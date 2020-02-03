@@ -1,7 +1,7 @@
 var post = localStorage.getItem("postNumber")
 
 if(post){
-    $.get(`http://localhost:8000/post/${post}`, response => {
+    $.get(`http://alergocare.com/blog-back/public/index.php/post/${post}`, response => {
         $("#title").html(response.title)
         $("#text").html(response.text)
         $("#category").html(response.category)

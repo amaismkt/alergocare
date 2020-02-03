@@ -1,14 +1,14 @@
 var editPost = localStorage.getItem("edit-post")
 var imgName = "no-image"
 
-$.get(`http://localhost:8000/edit-post/${editPost}`, response => {
+$.get(`http://alergocare.com/blog-back/public/index.php/edit-post/${editPost}`, response => {
     $("#id").val(response.id)
     $("#title").val(response.title)
     $(".jqte_editor").html(response.text)
     imgName = response.image
 })
 
-$.get("http://127.0.0.1:8000/categories/", response => {
+$.get("http://alergocare.com/blog-back/public/index.php/categories/", response => {
         populateCategories(response)
 })
 
@@ -32,7 +32,7 @@ function uploadImg()
     fd.append('file',files)
 
     $.ajax({
-        url: 'http://localhost:8000/file-upload',
+        url: 'http://alergocare.com/blog-back/public/index.php/file-upload',
         type: 'post',
         data: fd,
         contentType: false,
@@ -50,7 +50,7 @@ $("#post").submit(() => {
     let data = $("#post").serialize()
     data = data + "&image=" + imgName
 
-    $.post("http://localhost:8000/update-post", data)
+    $.post("http://alergocare.com/blog-back/public/index.php/update-post", data)
     .done(() => {
         uploadImg()
         $("#sucesso").show(500)

@@ -1,11 +1,12 @@
 $(document).ready(() => {
-    $.get("http://127.0.0.1:8000/posts/", response => {
+    $.get("http://alergocare.com/blog-back/public/index.php/posts/", response => {
         populatePosts(response)
     })
 })
 
 function populatePosts(posts)
 {
+    console.log(posts)
     posts.forEach((post) => {
         $("#post-row").append(`
         <div class="col-md-4">

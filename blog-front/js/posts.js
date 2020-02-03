@@ -1,4 +1,4 @@
-$.get("http://localhost:8000/posts", response => {
+$.get("http://alergocare.com/blog-back/public/index.php/posts", response => {
     response.forEach((post) => {
         $("#posts-tbody").append(`
             <tr>
@@ -66,3 +66,5 @@ function editPost(id)
     localStorage.setItem("edit-post", id)
     window.location.href = "editar-post.html"
 }
+
+
